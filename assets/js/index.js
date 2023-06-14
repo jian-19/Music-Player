@@ -10,9 +10,11 @@ function previousMusic() {
 function playMusic() {
     const iconPlay = document.querySelector('.play')
     if (iconPlay.innerText === "play_circle") {
+        song.play();
         iconPlay.innerText = 'pause_circle';
     }else if (iconPlay.innerText === "pause_circle") {
         iconPlay.innerText = 'play_circle';
+        song.pause();
     }
 }
 
