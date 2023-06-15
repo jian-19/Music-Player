@@ -4,6 +4,8 @@ document.querySelector('.play').addEventListener('click', playMusic);
 document.querySelector('.next').addEventListener('click', nextMusic);
 const song = document.querySelector("audio");
 
+const iconPlay = document.querySelector('.play')
+
 const progressBarContainer = document.querySelector('.bar');
 const progressBar = document.querySelector('.progress-bar');
 const progress = document.querySelector('.progress');
@@ -51,11 +53,11 @@ function previousMusic() {
     albumCover.src = albumImages[currentMusic];
     songName.innerText = songNames[currentMusic];
     artistName.innerText = artistNames[currentMusic];
+    iconPlay.innerText = 'pause_circle';
     song.play()
 }
 // FUNÇÃO PLAY/PAUSE MÚSICA //
 function playMusic() {
-    const iconPlay = document.querySelector('.play')
     if (iconPlay.innerText === "play_circle") {
         song.play();
         iconPlay.innerText = 'pause_circle';
@@ -74,6 +76,7 @@ function nextMusic() {
     albumCover.src = albumImages[currentMusic];
     songName.innerText = songNames[currentMusic];
     artistName.innerText = artistNames[currentMusic];
+    iconPlay.innerText = 'pause_circle';
     song.play();
 
 }
