@@ -7,7 +7,6 @@
 
 :root {
     --text-color: #fbdc67;
-    --music-player-color: ;
     --circle-player: #ff9758;
 }
 
@@ -32,29 +31,31 @@
     justify-content: center;
     color: var(--text-color);
     border-radius: 0.8rem;
+    width: 23rem;
+}
 
+.box-player p {
+    padding-bottom: 2rem;
 }
 
 .album-cover {
-    /* border-radius: 50%; */
     border-radius: 0.8rem;
     width: 15rem;
     height: 15rem;
-    margin:2rem 2rem 0 2rem;
+    margin: 2rem 2rem 0 2rem;
     border: 2px solid var(--circle-player);
     box-shadow: 1px 1px 30px 1px var(--circle-player);
-
 }
 
 .text {
-    padding:0 1rem 1rem 1rem;
+    padding: 0 1rem 1rem 1rem;
 }
 
 .material-symbols-outlined {
     font-size: 5rem;
     background-color: transparent;
     border: 0;
-    color: var(--circle-player);
+    color: var(--text-color);
     cursor: pointer;
 }
 
@@ -71,25 +72,30 @@
 
 .bar {
     width: 100%;
+    height: 10px;
     background-color: var(--text-color);
-    height: 5px;
-    border-radius: 2rem;
     display: flex;
     align-items: center;
+    border-radius: 2rem;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+.progress {
+    height: 100%;
+    background-color: var(--circle-player);
+    transition: width 0.2s ease-in-out;
+    border-radius: 2rem;
+    transform-origin: left;
+    border-radius: 2rem;
 }
 
-.bar span {
-    display: flex;
-    width: 0.8rem;
-    height: 0.8rem;
-    border: 2px solid var(--circle-player);
-    background-color:var(--text-color);
-    border-radius: 50%;
-    margin-left: 5%;
-}
 
 .time {
     padding-top: 0.2rem;
     display: flex;
     justify-content: space-between;
 }
+  
+
+  
