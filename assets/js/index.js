@@ -1,7 +1,7 @@
 // VARIAVEIS E ARRAYS PARA RECEBER E ARMAZENAR INFORMAÇÕES //
-const btnprevious = document.querySelector('.previous').addEventListener('click', previousMusic);
-const btnPlay = document.querySelector('.play').addEventListener('click', playMusic);
-const btnnext = document.querySelector('.next').addEventListener('click', nextMusic);
+document.querySelector('.previous').addEventListener('click', previousMusic);
+document.querySelector('.play').addEventListener('click', playMusic);
+document.querySelector('.next').addEventListener('click', nextMusic);
 const song = document.querySelector("audio");
 
 const progressBarContainer = document.querySelector('.bar');
@@ -48,10 +48,10 @@ const artistName = document.querySelector('.artist');
 function previousMusic() {
     currentMusic = (currentMusic - 1 + playList.length) % playList.length;
     song.src = playList[currentMusic];
-    song.play();
     albumCover.src = albumImages[currentMusic];
     songName.innerText = songNames[currentMusic];
     artistName.innerText = artistNames[currentMusic];
+    song.play()
 }
 // FUNÇÃO PLAY/PAUSE MÚSICA //
 function playMusic() {
@@ -71,10 +71,11 @@ function playMusic() {
 function nextMusic() {
     currentMusic = (currentMusic + 1) % playList.length;
     song.src = playList[currentMusic];
-    song.play();
     albumCover.src = albumImages[currentMusic];
     songName.innerText = songNames[currentMusic];
     artistName.innerText = artistNames[currentMusic];
+    song.play();
+
 }
 // ADICIONANDO CLICK AO PROGRESSBAR PARA AVANÇO //
 progressBarContainer.addEventListener('click', handleProgressBarClick);
